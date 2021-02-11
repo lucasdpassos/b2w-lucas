@@ -2,7 +2,7 @@ Olá Recrutador!
 
 Este respositório está no escopo do desafio back-end node da B2W!
 
-O objetivo é criar uma API Rest que faça um CRUD dos planetas do Star Wars e que também consulte a SWAPI para informações de aparições do filme!
+O objetivo é criar uma API Rest que faça um CRUD dos planetas do Star Wars e que também consulte a SWAPI para informações de aparições do filme! (tomei a liberdade de também colocar a função de update, vai que acontece alguma alteração nos climas planetários ;D)
 
 Confesso que fiquei extremamente emocionado e aproveitei cada segundo do desenvolvimento dessa API, pois assim como o time da B2W, eu também tenho um grande amor pela saga, faço parte do conselho Jedi RJ e sou um dos organizadores da Jedicon no Brasil, então projetos que envolvem SW são muito prazerosos pra mim!
 
