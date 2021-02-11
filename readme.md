@@ -32,10 +32,12 @@ GitKraken - Para issue tracking e melhor controle das branches
 Segue a documentação da API, hospedada na Vercel:
 
 
-https://lucas-b2w-doc.vercel.app/
+https://lucas-b2w-documentation.vercel.app/
 
 
+--------- Testes --------
 
+Utilizei o SuperTest (jest) para testar os endpoints da API, os testes se encontram na pasta tests(router.test.js)
 
 ------- Considerações Finais -------
 
