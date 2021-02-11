@@ -29,15 +29,19 @@ GitKraken - Para issue tracking e melhor controle das branches
 
 ------ Endpoints ------
 
-Segue a documentação da API, hospedada na Vercel (B2W PLANETS):
+Segue a documentação da API, hospedada na Vercel:
 
 
-https://b2w-planets.vercel.app/
+https://lucas-b2w-doc.vercel.app/
 
 
 
 
 ------- Considerações Finais -------
+
+Primeiramente, muito obrigado pela janela de oportunidade, eu espero que essa API seja o meu passaporte para o time B2W!
+
+Qualquer dúvida, feedback ou consideração, segue o meu email e meu perfil do LinkedIn:
 
 
 email: lucas.depassos@yahoo.com.br
