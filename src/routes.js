@@ -1,8 +1,10 @@
 const express = require('express')
 const router = express.Router
+const PlanetController = require('./controllers/PlanetController')
 
-router.get('/ping', (req, res) => {
-    res.json({pong: true})
-})
+// Lucas: Testing Ping
+router.get('/ping', PlanetController.ping)
+
+router.get
 
 module.exports = router
