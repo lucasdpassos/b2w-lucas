@@ -35,27 +35,20 @@ Segue a documentação da API, hospedada na Vercel (B2W PLANETS):
 https://b2w-planets.vercel.app/
 
 
------- GitKraken Map ------
-
-Para dinamizar a sua análise, resolvi colocar aqui o meu mapa de commits extraído do GitKraken
-
-<a href="https://ibb.co/BZWzBKg"><img src="https://i.ibb.co/7WMYKNG/branches.png" alt="branches" border="0"></a>
-
 
 
 ------- Considerações Finais -------
 
-Primeiramente, muito obrigado pela janela de oportunidade, eu espero que esta API seja o meu passaporte para integrar os próximos projetos que estão surgindo para o dream team da Meritt. Estou aberto à feedbacks através do meu email e do LinkedIn.
 
 email: lucas.depassos@yahoo.com.br
 linkedIn: https://www.linkedin.com/in/lucasdezerto/
 
 
 
-E ai time da Meritt, vamos revolucionar o conceito de educação juntos??
+E ai time da B2W, vamos revolucionar a galáxia juntos?
 
 
-<a href=""><img src="https://i.ytimg.com/vi/Yv93L1KqMMc/maxresdefault.jpg" alt="branches" border="0" width="500"></a>
+<a href=""><img src="https://pbs.twimg.com/media/CWYua0-UwAAwnY4.jpg" alt="branches" border="0" width="600"></a>
 
 
 
