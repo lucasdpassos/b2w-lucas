@@ -46,7 +46,7 @@ module.exports = {
     },
     getByName: async (req, res, next) => {
         try {
-            const { name } = req.params
+            const name  = req.query
             const itemName = await planets.find({name: name})
 
             res.jsom(itemName)
