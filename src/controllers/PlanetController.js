@@ -33,5 +33,56 @@ module.exports = {
             next(error)
             
         }
+    },
+    getById: async (req, res, next) => {
+        try {
+            const { id } = req.params
+            const item = await planets.findOne({_id: id})
+            res.json(item)
+
+        } catch (error) {
+            next(error)
+        }
+    },
+    getByName: async (req, res, next) => {
+        try {
+            const { name } = req.params
+            const itemName = await planets.find({name: name})
+
+            res.jsom(itemName)
+
+        } catch (error) {
+            
+        }
+    },
+    update: async (req, res, next) => {
+        try {
+            const { id } = req.params
+            const value = await schema.validateAsync(req.body)
+            var newvalues = { $set: value };
+            const item = await planets.findOne({_id: id})
+            
+            if (!item) return next()
+
+            await planets.update({
+                _id: id
+            }, newvalues)
+
+            res.json(value)
+
+        } catch (error) {
+            next(error)
+        }
+    },
+    delete: async (req, res, next) => {
+        try {
+            const { id } = req.params
+            await planets.remove({_id: id})
+            res.json({
+                message: "success"
+            })
+        } catch (error) {
+            next(error)
+        }
     }
 }

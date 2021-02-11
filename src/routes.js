@@ -9,18 +9,18 @@ router.get('/ping', PlanetController.ping)
 router.get('/planets', PlanetController.getAll)
 
 // Lucas: Planeta por Id
-//router.get('/planets/:id', PlanetController.getById)
+router.get('/planets/:id', PlanetController.getById)
 
 // Lucas: Planeta pelo nome
-//router.get('/planets/:name', PlanetController.getByName)
+router.get('/planets/:name', PlanetController.getByName)
 
 // Lucas: Criar planeta
 router.post('/planets', PlanetController.create)
 
 // Lucas: Update de planeta
-//router.put('/planets/:id', PlanetController.update)
+router.put('/planets/:id', PlanetController.update)
 
 // Lucas: Deletar planeta
-//router.delete('/planets/:id', PlanetController.delete)
+router.delete('/planets/:id', PlanetController.delete)
 
 module.exports = router
