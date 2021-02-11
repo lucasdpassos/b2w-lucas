@@ -1,15 +1,45 @@
 require('dotenv').config()
 const monk = require('monk')
 const Joi = require('@hapi/joi')
-
+const axios = require('axios')
 const db = monk(process.env.MONGO_URI)
 const planets = db.get('planets')
+const JefNode = require('json-easy-filter').JefNode;
 
 const schema = Joi.object({
     name: Joi.string().required(),
     climate: Joi.string().required(),
     terrain: Joi.string().required()
 })
+
+
+axios.get('http://swapi.dev/api/planets/1')
+  .then(function (response) {
+    // handle success
+
+    const planetData = response.data
+    
+
+    /* for(var planetName in planetData){
+        console.log(planetName+": "+planetData[planetName]);
+    } */
+     
+     var planetLoop = new JefNode(planetData).filter(function(node) {
+        if (node.has('name')) {
+            return node.value.population;
+        }
+    }); 
+    
+    console.log(planetLoop)
+    
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
 
 
 module.exports = {
@@ -38,7 +68,16 @@ module.exports = {
         try {
             const { id } = req.params
             const item = await planets.findOne({_id: id})
+
+            
+                
             res.json(item)
+            const films = this.planetData.name
+            res.json(films)
+            console.log(this.planetData.name)
+            
+
+
 
         } catch (error) {
             next(error)
@@ -46,10 +85,9 @@ module.exports = {
     },
     getByName: async (req, res, next) => {
         try {
-            const name  = req.query
-            const itemName = await planets.find({name: name})
-
-            res.jsom(itemName)
+                     
+            const item = await planets.find(req.query)
+            res.json(item)
 
         } catch (error) {
             
