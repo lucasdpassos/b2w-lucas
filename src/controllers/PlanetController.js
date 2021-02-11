@@ -2,6 +2,8 @@ require('dotenv').config()
 const monk = require('monk')
 const Joi = require('@hapi/joi')
 const axios = require('axios')
+
+// Lucas: Apesar de gostar muito de mongoose nas aplicações, neste caso específico eu preferi usar o monk junto com joi para validar os schemas
 const db = monk(process.env.MONGO_URI)
 const planets = db.get('planets')
 const JefNode = require('json-easy-filter').JefNode;
@@ -44,7 +46,7 @@ module.exports = {
 
             
             // Lucas: Abaixo é a função que vai buscar os links das aparições dos filmes de acordo com o nome do planeta pesquisado
-            const planetPop = []
+            const planetFilms = []
 
 
             var needle = item.name
@@ -62,26 +64,24 @@ module.exports = {
                     }
                 }); 
                 
-                console.log(planetLoop)
-                planetPop.push(planetLoop)
-                console.log(planetPop)
+               
+                planetFilms.push(planetLoop)
+               
 
                 res.json({
                     item: item,
-                    Films: planetPop
+                    Films: planetFilms
                 });
-                
+                console.log(planetFilms)
             
         })
         .catch(function (error) {
             // handle error
             console.log(error);
         })
+                   
 
             
-           
-
-            console.log(planetPop)
             
 
 
