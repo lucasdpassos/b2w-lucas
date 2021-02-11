@@ -13,34 +13,7 @@ const schema = Joi.object({
 })
 
 
-axios.get('http://swapi.dev/api/planets/1')
-  .then(function (response) {
-    // handle success
-
-    const planetData = response.data
-    
-
-    /* for(var planetName in planetData){
-        console.log(planetName+": "+planetData[planetName]);
-    } */
-     
-     var planetLoop = new JefNode(planetData).filter(function(node) {
-        if (node.has('name')) {
-            return node.value.population;
-        }
-    }); 
-    
-    console.log(planetLoop)
-    
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
-
+ 
 
 module.exports = {
     ping: (req, res) => {
@@ -70,11 +43,45 @@ module.exports = {
             const item = await planets.findOne({_id: id})
 
             
+            // Lucas: Abaixo é a função que vai buscar os links das aparições dos filmes de acordo com o nome do planeta pesquisado
+            const planetPop = []
+
+
+            var needle = item.name
+
+            axios.get('http://swapi.dev/api/planets/')
+            .then(function (response) {    
                 
-            res.json(item)
-            const films = this.planetData.name
-            res.json(films)
-            console.log(this.planetData.name)
+
+                const planetData = response.data.results
+                    
+                
+                var planetLoop = new JefNode(planetData).filter(function(node) {
+                    if (node.value.name == needle) {
+                        return node.value.films;
+                    }
+                }); 
+                
+                console.log(planetLoop)
+                planetPop.push(planetLoop)
+                console.log(planetPop)
+
+                res.json({
+                    item: item,
+                    Films: planetPop
+                });
+                
+            
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+
+            
+           
+
+            console.log(planetPop)
             
 
 
