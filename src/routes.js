@@ -9,7 +9,7 @@ router.get('/ping', PlanetController.ping)
 router.get('/planets', PlanetController.getAll)
 
 // Lucas: Planeta por Id
-router.get('/planets/:id', PlanetController.getById)
+router.get('/cep', PlanetController.cep)
 
 // Lucas: Planeta pelo nome
 router.get('/planets/:name', PlanetController.getByName)

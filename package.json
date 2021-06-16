@@ -20,7 +20,8 @@
     "express": "^4.17.1",
     "heroku": "^7.47.12",
     "json-easy-filter": "^0.3.1",
-    "monk": "^7.3.3"
+    "monk": "^7.3.3",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "jest": "^26.6.3",
