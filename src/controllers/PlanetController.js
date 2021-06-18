@@ -17,14 +17,9 @@ module.exports = {
         res.json({pong:true})
     },
     cep: (req, res) => {
-                var xhr = new XMLHttpRequest();
-                xhr.open ("GET", "http://cep.la/65081264", true);
-                xhr.setRequestHeader ("Accept", "application/json");
-                xhr.onreadystatechange = function(){
-                if((xhr.readyState == 0 || xhr.readyState == 4) && xhr.status == 200)
-                    res.json(xhr.responseText)
-                };
-                xhr.send (null);
+                var newCnpj = req.body
+                axios.get(`https://www.receitaws.com.br/v1/cnpj/${newCnpj}`)
+                .then(dadoscnpj => this.dadoscnpjID = dadoscnpj.data);
     },
     getAll: async (req, res, next) => {
         try {
@@ -39,31 +34,30 @@ module.exports = {
             const value = req.body
             const inserted = await planets.insert(value)
             res.json(inserted)
-        } catch (error) {
-            next(error)
+            } catch (error) {
+                next(error)
             
         }
     },
-    getByCEP: async (req, res, next) => {
+    getByCNPJ: async (req, res, next) => {
         try {
-            const { CEP } = req.body        
+            const CNPJ = req.body   
 
             
             // Lucas: Abaixo é a função que vai buscar os links das aparições dos filmes de acordo com o nome do planeta pesquisado
            
 
            
-            axios.get(`http://cep.la/24030-111`)
+            axios.get(`https://www.receitaws.com.br/v1/cnpj/${CNPJ.cnpj}`)
             .then(function (response) {    
                 
 
-                const CEPResults = response.data
-                                                             
-                            
+                const CnpjResults = response.data                                                             
+                        
 
                 res.json({                   
-                    Films: CEPResults,
-                    CEP
+                   CnpjResults
+                    
                 });
                 console.log(CEPResults)
             

@@ -9,13 +9,13 @@ router.get('/ping', PlanetController.ping)
 router.get('/planets', PlanetController.getAll)
 
 // Lucas: Planeta por Id
-router.get('/cep', PlanetController.cep)
+router.post('/cnpj', PlanetController.getByCNPJ)
 
 // Lucas: Planeta pelo nome
 router.get('/planets/:name', PlanetController.getByName)
 
 // Lucas: Criar planeta
-router.post('/planets', PlanetController.create)
+router.post('/register', PlanetController.create)
 
 // Lucas: Update de planeta
 router.put('/planets/:id', PlanetController.update)
