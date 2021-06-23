@@ -101,10 +101,9 @@ module.exports = {
     getByName: async (req, res, next) => {
         try {
             
-            const se = req.query            
-            const item = await planets.find({ "ADDRESS1.estado": se })            
+            const item = await planets.find({ "ADDRESS1.estado": req.query })
             res.json(item)
-            res.json(n)
+
         } catch (error) {
             res.json(error)
         }
