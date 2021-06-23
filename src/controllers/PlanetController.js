@@ -77,16 +77,39 @@ module.exports = {
             next(error)
         }
     },
-    getByName: async (req, res, next) => {
-        try {
-                     
-            const item = await planets.find(req.query)
-            res.json(item)
+    userLogin: async (req, res, next) => {
+        try {            
+            const data = req.body                  
+            const item2 = await planets.findOne({_cnpj: data})
+            console.log(data)
+            console.log(item2)
+            
+            if(!item2) {
+                res.json("Nenhum email encontrado")
+                console.log("Nenhum email encontrado")
+            }
+                res.json(item2)
+                
+        
+
+
 
         } catch (error) {
-            
+            next(error)
         }
     },
+    getByName: async (req, res, next) => {
+        try {
+            
+            const se = req.query            
+            const item = await planets.find({ "ADDRESS1.estado": se })            
+            res.json(item)
+            res.json(n)
+        } catch (error) {
+            res.json(error)
+        }
+    },   
+    
     update: async (req, res, next) => {
         try {
             const { id } = req.params

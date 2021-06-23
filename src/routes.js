@@ -12,7 +12,7 @@ router.get('/planets', PlanetController.getAll)
 router.post('/cnpj', PlanetController.getByCNPJ)
 
 // Lucas: Planeta pelo nome
-router.get('/planets/:name', PlanetController.getByName)
+router.get('/nit', PlanetController.getByName)
 
 // Lucas: Criar planeta
 router.post('/register', PlanetController.create)
@@ -22,5 +22,7 @@ router.put('/planets/:id', PlanetController.update)
 
 // Lucas: Deletar planeta
 router.delete('/planets/:id', PlanetController.delete)
+
+router.post('/planets/userlogin', PlanetController.userLogin)
 
 module.exports = router
