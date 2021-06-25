@@ -12,7 +12,7 @@ router.get('/planets', PlanetController.getAll)
 router.post('/cnpj', PlanetController.getByCNPJ)
 
 // Lucas: Planeta pelo nome
-router.get('/nit/:estado', PlanetController.getByName)
+router.get('/nit/:email', PlanetController.getByName)
 
 // Lucas: Criar planeta
 router.post('/register', PlanetController.create)

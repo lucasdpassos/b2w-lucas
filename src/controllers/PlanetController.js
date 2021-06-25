@@ -101,8 +101,11 @@ module.exports = {
     getByName: async (req, res, next) => {
         try {
             
-            const item = await planets.find({ "ADDRESS1.estado": req.query })
+            var state = req.params
+            const item = await planets.find({ "email": state.email })
             res.json(item)
+            console.log(req.params)
+            console.log(req.query)
 
         } catch (error) {
             res.json(error)
