@@ -12,7 +12,7 @@ app.use(express.json())
 
 app.use(routes)
 
-app.listen(process.env.PORT, () => {
+app.listen('9999', () => {
     console.log(`B2W Planets On-line on http://localhost:${process.env.PORT}`)
 })
 
