@@ -1,12 +1,12 @@
 {
-  "name": "B2W",
+  "name": "hapidus",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "dev": "nodemon ./src/server.js",
-    "start": "node ./src/server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
