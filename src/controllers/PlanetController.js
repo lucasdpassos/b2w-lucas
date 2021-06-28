@@ -85,7 +85,7 @@ module.exports = {
             console.log(item2)
             
             if(!item2) {
-                res.json("Nenhum email encontrado")
+                res.json("Nenhum email encontradoo")
                 console.log("Nenhum email encontrado")
             }
                 res.json(item2)
